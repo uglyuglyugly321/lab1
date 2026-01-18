@@ -802,55 +802,6 @@ x=2
 результат: 2
 ```
 
----
-
-## Задача 4.3 Поиск максимального.
-
-**Формулировка:**  
-```
-Дана сигнатура метода: public int maxAbs (int[] arr);
-Необходимо реализовать метод таким образом, чтобы он возвращал
-наибольшее по модулю (то есть без учета знака) значение массива arr.
-```   
-
-**Код реализации:**
-```java
-System.out.println("Блок 4. Задача 3: ");
-System.out.print("Введите количество элементов массива: ");
-int n2 =  scanner.nextInt();
-int[] arr2 = new int[n2];
-
-System.out.println("Введите элементы массива: ");
-for (int i = 0; i < n2; i++) {
-    arr2[i] = scanner.nextInt();
-}
-
-Test t2 = new Test();
-
-int max = t2.maxAbs(arr2);
-System.out.println("Наибольшее по модулю число: " + max);
-```
-
-**Код решения:**
-```java
-public int maxAbs(int[] arr) {
-        int max = arr[0]; // считаем, что первый элемент — пока максимальный по модулю
-        for (int i = 1; i < arr.length; i++) {
-            if (Math.abs(arr[i]) > Math.abs(max)) {
-                max = arr[i];
-                }
-            }
-            return max;
-        }
-```
-
-**Примеры работы (x=3):**
-```
-arr=[2,2,1]
-x=2
-результат: 2
-```
-
 
 ---
 
