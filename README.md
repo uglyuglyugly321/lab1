@@ -44,7 +44,7 @@ x = -3.7  → -0.7
 
 ---
 
-## Задача 2.1 Букву в число  
+## Задача 1.3 Букву в число  
 
 **Формулировка:**  
 ```
@@ -83,7 +83,7 @@ x = '9' → 9
 
 ---
 
-## Задача 3.1 Двузначное число  
+## Задача 1.5 Двузначное число  
 
 **Формулировка:**  
 ```
@@ -124,7 +124,7 @@ x = -45  → true
 
 ---
 
-## Задача 4.1 Диапазон  
+## Задача 1.7 Диапазон  
 
 **Формулировка:**  
 ```
@@ -171,7 +171,7 @@ a = 2, b = 15, num = 33 → false
 
 ---
 
-## Задача 5.1 Равенство  
+## Задача 1.9 Равенство  
 
 **Формулировка:**  
 ```
@@ -191,6 +191,19 @@ public boolean isEqual(int fir, int sec, int thr) {
 }
 ```
 
+**Код реализациии:**
+```java
+System.out.println("Блок 1. Задача 9: ");
+System.out.println("Введите 3 числа: ");
+int fir = scanner.nextInt();
+int sec = scanner.nextInt();
+int thr = scanner.nextInt();
+
+Test checker3 = new Test();
+boolean result4 = checker3.isEqual(fir, sec, thr);
+System.out.println(result4);
+```
+
 **Примеры работы:**
 ```
 a = 5, b = 5, c = 5 → true
@@ -199,7 +212,7 @@ a = 3, b = 3, c = 7 → false
 
 ---
 
-## Задача 1.2 Модуль числа 
+## Задача 2.1 Модуль числа 
 
 **Формулировка:**  
 ```
@@ -236,6 +249,17 @@ public int abs (int x) {
     }
 ```
 
+**Код реализациии:**
+```java
+System.out.println("Блок 2. Задача 1: ");
+System.out.println("Введите число: ");
+int m = scanner.nextInt();
+Test calc2 = new Test();
+int result5 = calc2.abs(m);
+System.out.println("Модуль числа: " + result5);
+```
+
+
 **Примеры работы:**
 ```
 x = -7 → 7
@@ -245,7 +269,7 @@ x =  0 → 0
 
 ---
 
-## Задача 2.2 Тридцать пять.
+## Задача 2.3 Тридцать пять.
 
 **Формулировка:**  
 ```
@@ -278,6 +302,16 @@ public boolean is35 (int x) {
     }
 ```
 
+**Код реализациии:**
+```java
+System.out.println("Блок 2. Задача 3: ");
+System.out.println("Введите число: ");
+int g = scanner.nextInt();
+Test checker4 = new Test();
+boolean result6 = checker4.is35(g);
+System.out.println("Результат: " + result6);
+```
+
 **Примеры работы:**
 ```
 x = 5 → true
@@ -287,7 +321,7 @@ x = 15 → false
 
 ---
 
-## Задача 3.2. Тройной максимум. 
+## Задача 2.5 Тройной максимум. 
 
 **Формулировка:**  
 ```
@@ -313,6 +347,18 @@ public int max3 (int x, int y, int z) {
     }
 ```
 
+**Код реaлизации:**
+```java
+System.out.println("Блок 2. Задача 5: ");
+System.out.println("Введите 3 числа: ");
+int comp1 = scanner.nextInt();
+int comp2 = scanner.nextInt();
+int comp3 = scanner.nextInt();
+Test checker5 = new Test();
+int result7 = checker5.max3(comp1, comp2, comp3);
+System.out.println("Результат: " + result7);
+```
+
 **Примеры работы:**
 ```
 (5, 7, 7) → 7
@@ -321,7 +367,7 @@ public int max3 (int x, int y, int z) {
 
 ---
 
-## Задача 4.2 Двойная сумма.
+## Задача 2.7 Двойная сумма.
 
 **Формулировка:**  
 ```
@@ -347,6 +393,17 @@ public int sum2 (int x, int y) {
 }
 ```
 
+**Код реализации:**
+```java
+System.out.println("Блок 2. Задача 7: ");
+System.out.println("Введите 2 числа: ");
+int sum1 = scanner.nextInt();
+int sum2 = scanner.nextInt();
+Test checker7 = new Test();
+int result8 = checker7.sum2(sum1, sum2);
+System.out.println("Результат: " + result8);
+```
+
 **Примеры работы:**
 ```
 (5, 7) → 20
@@ -355,7 +412,7 @@ public int sum2 (int x, int y) {
 
 ---
 
-## Задача 5.2 День недели  
+## Задача 2.9 День недели  
 
 **Формулировка:**  
 ```
@@ -388,6 +445,15 @@ public String day(int x) {
 }
 ```
 
+**Код реализации:**
+```java
+System.out.println("Блок 2. Задача 9: ");
+System.out.println("Введите День недели: ");
+int day = scanner.nextInt();
+Test checker8 = new Test();
+String result9 = checker8.day(day);
+System.out.println(result9);
+```
 **Примеры работы:**
 ```
 x = 1 → Понедельник
@@ -396,7 +462,7 @@ x = 9 → это не день недели
 
 ---
 
-## Задача 1.3 Числа подряд. 
+## Задача 3.1 Числа подряд. 
 
 **Формулировка:**  
 ```
@@ -411,11 +477,12 @@ x = 9 → это не день недели
 
 **Код решения:**
 ```java
-public String chet (int x) {
+public String listNums(int x) {
     StringBuilder sb = new StringBuilder();
-    for (int i = 0; i <= x; i += 2) {
+
+    for (int i = 0; i <= x; i++) {
         sb.append(i);
-        if (i + 2 <= x) {
+        if (i < x) {
             sb.append(" ");
         }
     }
@@ -423,6 +490,15 @@ public String chet (int x) {
 }
 ```
 
+**Код реализации:**
+```java
+System.out.println("Блок 3. Задача 1: ");
+System.out.println("Введите число: ");
+int list_num = scanner.nextInt();
+Test checker9 = new Test();
+String result10 = checker9.listNums(list_num);
+System.out.println(result10);
+```
 **Примеры работы:**
 ```
 x = 5 → "0 1 2 3 4 5"
@@ -430,7 +506,7 @@ x = 5 → "0 1 2 3 4 5"
 
 ---
 
-## Задача 2.2 Чётные числа  
+## Задача 3.3 Чётные числа  
 
 **Формулировка:**  
 ```
@@ -446,13 +522,15 @@ x = 5 → "0 1 2 3 4 5"
 **Код реализации:**
 ```java
 public String chet(int x) {
-    StringBuilder sb = new StringBuilder();
-    for (int i = 0; i <= x; i += 2) {
-        sb.append(i);
-        if (i + 2 <= x) sb.append(" ");
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i <= x; i += 2) {
+            sb.append(i);
+            if (i + 2 <= x) {
+                sb.append(" ");
+            }
+        }
+        return sb.toString();
     }
-    return sb.toString();
-}
 ```
 
 **Примеры работы:**
