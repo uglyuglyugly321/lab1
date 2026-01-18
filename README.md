@@ -519,7 +519,7 @@ x = 5 → "0 1 2 3 4 5"
 1. Использовать цикл с шагом 2 (`i+=2`).  
 2. Добавлять числа в строку.  
 
-**Код реализации:**
+**Код решения:**
 ```java
 public String chet(int x) {
         StringBuilder sb = new StringBuilder();
@@ -533,6 +533,16 @@ public String chet(int x) {
     }
 ```
 
+**Код реализации:**
+```java
+System.out.println("Блок 3. Задача 3: ");
+System.out.println("Введите число: ");
+int list_num2 = scanner.nextInt();
+Test checker10 = new Test();
+String result11 = checker10.chet(list_num2);
+System.out.println(result11);
+```
+
 **Примеры работы:**
 ```
 x = 7  → "0 2 4 6"
@@ -541,7 +551,7 @@ x = 10 → "0 2 4 6 8 10"
 
 ---
 
-## Задача 13. Длина числа  
+## Задача 3.5 Длина числа  
 
 **Формулировка:**  
 ```
@@ -557,17 +567,32 @@ Int у=123/10; // у будет иметь значение 12
 3. Делить на 10, пока `x > 0`, и считать шаги.  
 
 **Код решения:**
-```jav
+```java
 public int numLen(long x) {
-    if (x < 0) x = -x;
-    if (x == 0) return 1;
-    int count = 0;
-    while (x > 0) {
-        x = x / 10;
-        count++;
+        if (x < 0) {
+            x = -x;
+        }
+        if (x == 0) {
+            return 1;
+        }
+        int count = 0;
+
+        while (x > 0) {
+            x = x / 10;
+            count++;
+        }
+        return count;
     }
-    return count;
-}
+```
+
+**Код реализации:**
+```java
+System.out.println("Блок 3. Задача 5: ");
+System.out.println("Введите число: ");
+int count_sign = scanner.nextInt();
+Test checker11 = new Test();
+int result12 = checker11.numLen(count_sign);
+System.out.println("Длина числа: " + result12);
 ```
 
 **Примеры работы:**
@@ -579,7 +604,7 @@ public int numLen(long x) {
 
 ---
 
-## Задача 14. Квадрат из `*`  
+## Задача 3.7 Квадрат из `*`  
 
 **Формулировка:**  
 ```java
@@ -592,7 +617,7 @@ public void square(int x);
 2. Заполнить его `*`.  
 3. Вывести на экран.  
 
-**Код реализации:**
+**Код решения:**
 ```java
 public void square(int x) {
     char[][] square = new char[x][x];
@@ -610,6 +635,15 @@ public void square(int x) {
 }
 ```
 
+**Код реализации:**
+```java
+System.out.println("Блок 3. Задача 7: ");
+System.out.println("Введите число: ");
+int square = scanner.nextInt();
+Test sp = new Test();
+sp.square(square);
+```
+
 **Примеры работы (x=4):**
 ```
 ****
@@ -620,7 +654,7 @@ public void square(int x) {
 
 ---
 
-## Задача 15. Правый треугольник  
+## Задача 3.9 Правый треугольник  
 
 **Формулировка:**  
 ```java
@@ -632,21 +666,28 @@ public void rightTriangle(int x);
 1. В строке `i` сначала напечатать `(x-i)` пробелов.  
 2. Затем `i` символов `*`.  
 
-**Код реализации:**
+**Код решения:**
 ```java
 public void rightTriangle(int x) {
-    for (int i = 1; i <= x; i++) {
-        for (int j = 0; j < x - i; j++) {
-            System.out.print(" ");
-        }
-        for (int j = 0; j < i; j++) {
-            System.out.print("*");
-        }
-        System.out.println();
-    }
+        for (int i = 1; i <= x; i++) {         // цикл i
+            for (int j = 0; j < x - i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
 }
 ```
 
+**Код реализации:**
+```java
+System.out.println("Блок 3. Задача 9: ");
+System.out.println("Введите число: ");
+int triangle = scanner.nextInt();
+Test tp = new Test();
+tp.rightTriangle(triangle);
+```
 **Примеры работы (x=5):**
 ```
     *
@@ -659,7 +700,7 @@ public void rightTriangle(int x) {
 
 ---
 
-## Задача 1.4 Поиск первого значения.
+## Задача 4.1 Поиск первого значения.
 
 **Формулировка:**  
 ```
@@ -693,7 +734,7 @@ if (index != -1) {
 ```
 
 **Код решения:**
-```java\
+```java
 public int findFirst(int[] arr, int x) {
     for (int i = 0; i < arr.length; i++) {  // проходим по каждому элементу массива
         if (arr[i] == x) {                  // если текущий элемент равен x
@@ -713,4 +754,279 @@ x=2
 
 
 ---
+
+## Задача 4.3 Поиск максимального.
+
+**Формулировка:**  
+```
+Дана сигнатура метода: public int maxAbs (int[] arr);
+Необходимо реализовать метод таким образом, чтобы он возвращал
+наибольшее по модулю (то есть без учета знака) значение массива arr.
+```   
+
+**Код реализации:**
+```java
+System.out.println("Блок 4. Задача 3: ");
+System.out.print("Введите количество элементов массива: ");
+int n2 =  scanner.nextInt();
+int[] arr2 = new int[n2];
+
+System.out.println("Введите элементы массива: ");
+for (int i = 0; i < n2; i++) {
+    arr2[i] = scanner.nextInt();
+}
+
+Test t2 = new Test();
+
+int max = t2.maxAbs(arr2);
+System.out.println("Наибольшее по модулю число: " + max);
+```
+
+**Код решения:**
+```java
+public int maxAbs(int[] arr) {
+        int max = arr[0]; // считаем, что первый элемент — пока максимальный по модулю
+        for (int i = 1; i < arr.length; i++) {
+            if (Math.abs(arr[i]) > Math.abs(max)) {
+                max = arr[i];
+                }
+            }
+            return max;
+        }
+```
+
+**Примеры работы (x=3):**
+```
+arr=[2,2,1]
+x=2
+результат: 2
+```
+
+---
+
+## Задача 4.3 Поиск максимального.
+
+**Формулировка:**  
+```
+Дана сигнатура метода: public int maxAbs (int[] arr);
+Необходимо реализовать метод таким образом, чтобы он возвращал
+наибольшее по модулю (то есть без учета знака) значение массива arr.
+```   
+
+**Код реализации:**
+```java
+System.out.println("Блок 4. Задача 3: ");
+System.out.print("Введите количество элементов массива: ");
+int n2 =  scanner.nextInt();
+int[] arr2 = new int[n2];
+
+System.out.println("Введите элементы массива: ");
+for (int i = 0; i < n2; i++) {
+    arr2[i] = scanner.nextInt();
+}
+
+Test t2 = new Test();
+
+int max = t2.maxAbs(arr2);
+System.out.println("Наибольшее по модулю число: " + max);
+```
+
+**Код решения:**
+```java
+public int maxAbs(int[] arr) {
+        int max = arr[0]; // считаем, что первый элемент — пока максимальный по модулю
+        for (int i = 1; i < arr.length; i++) {
+            if (Math.abs(arr[i]) > Math.abs(max)) {
+                max = arr[i];
+                }
+            }
+            return max;
+        }
+```
+
+**Примеры работы (x=3):**
+```
+arr=[2,2,1]
+x=2
+результат: 2
+```
+
+
+---
+
+## Задача 4.3 Поиск максимального.
+
+**Формулировка:**  
+```
+Дана сигнатура метода: public int maxAbs (int[] arr);
+Необходимо реализовать метод таким образом, чтобы он возвращал
+наибольшее по модулю (то есть без учета знака) значение массива arr.
+```   
+
+**Код реализации:**
+```java
+System.out.println("Блок 4. Задача 3: ");
+System.out.print("Введите количество элементов массива: ");
+int n2 =  scanner.nextInt();
+int[] arr2 = new int[n2];
+
+System.out.println("Введите элементы массива: ");
+for (int i = 0; i < n2; i++) {
+    arr2[i] = scanner.nextInt();
+}
+
+Test t2 = new Test();
+
+int max = t2.maxAbs(arr2);
+System.out.println("Наибольшее по модулю число: " + max);
+```
+
+**Код решения:**
+```java
+public int maxAbs(int[] arr) {
+        int max = arr[0]; // считаем, что первый элемент — пока максимальный по модулю
+        for (int i = 1; i < arr.length; i++) {
+            if (Math.abs(arr[i]) > Math.abs(max)) {
+                max = arr[i];
+                }
+            }
+            return max;
+        }
+```
+
+**Примеры работы (x=3):**
+```
+arr=[2,2,1]
+x=2
+результат: 2
+```
+
+
+---
+
+## Задача 4.7 Возвратный реверс.
+
+**Формулировка:**  
+```
+Дана сигнатура метода: public int[] reverseBack (int[] arr);
+Необходимо реализовать метод таким образом, чтобы он возвращал новый
+массив, в котором значения массива arr записаны задом наперед.
+```   
+
+**Код реализации:**
+```java
+System.out.println("Блок 4. Задача 7 : ");
+System.out.print("Введите количество элементов массива: ");
+int n3 = scanner.nextInt();
+int[] arr3 = new int[n3];
+
+System.out.println("Введите элементы массива:");
+for (int i = 0; i < n; i++) {
+    arr3[i] = scanner.nextInt();
+}
+
+Test t3 = new Test();
+int[] reversedArr = t3.reverseBack(arr3);
+
+System.out.print("Обратный массив: ");
+for (int i = 0; i < reversedArr.length; i++) {
+    System.out.print(reversedArr[i] + " ");
+}
+System.out.println();
+```
+
+**Код решения:**
+```java
+public int[] reverseBack (int[] arr){
+
+        int[] reversed  = new int[arr.length];
+
+        for (int i = 0; i < arr.length; i++) {
+            reversed[i] = arr[arr.length - i - 1];
+        }
+        return reversed;
+    }
+```
+
+**Примеры работы (x=3):**
+```
+arr=[2,2,1]
+результат: 1 2 2
+```
+
+
+---
+
+## Задача 4.9 Вcе вхождения.
+
+**Формулировка:**  
+```
+Дана сигнатура метода: public int[] findAll (int[] arr, int x);
+Необходимо реализовать метод таким образом, чтобы он возвращал новый
+массив, в котором записаны индексы всех вхождений числа x в массив arr.
+```   
+
+**Код реализации:**
+```java
+System.out.println("Блок 4. Задача 9: ");
+System.out.println("Введите количество элементов массива: ");
+int n4  = scanner.nextInt();
+int[] arr4 = new int[n4];
+
+System.out.println("Введите элементы массива: ");
+for (int i = 0; i < n4; i++) {
+    arr4[i] = scanner.nextInt();
+}
+System.out.print("Введите число для поиска: ");
+int x4 = scanner.nextInt();
+
+Test t4 = new Test();
+int[] result111 = t4.findAll(arr4, x4);
+
+
+if (result111.length == 0){
+    System.out.println("Число " + x4 + "не найдено!");
+}
+else {
+    System.out.println("Вхождения всех вхождений числа " + x4 + ": ");
+    for (int i = 0; i < result111.length; i++) {
+        System.out.print(result111[i] + " ");
+    }
+    System.out.println();
+}
+
+}
+```
+
+**Код решения:**
+```java
+public int[] findAll (int[] arr, int x){
+
+        int count = 0;
+        for (int value : arr) {
+            if (value == x) {
+                count++;
+            }
+
+        }
+        if (count == 0) {
+            return new int[0];
+        }
+        int[] ind = new int[count];
+        int idx = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == x) {
+                ind[idx++] = i;
+            }
+        }
+        return ind;
+    }
+```
+
+**Примеры работы (x=5):**
+```
+arr=[2, 2, 4, 9, 1]
+x = 4
+результат: 2
+```
 
